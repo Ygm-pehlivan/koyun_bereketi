@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GizlilikRouteImport } from './routes/gizlilik'
+import { Route as HakkimizdaRouteImport } from './routes/hakkimizda'
+import { Route as IletisimRouteImport } from './routes/iletisim'
+import { Route as KvkkRouteImport } from './routes/kvkk'
+import { Route as MesafeliSatisRouteImport } from './routes/mesafeli-satis'
+import { Route as SssRouteImport } from './routes/sss'
+import { Route as UrunlerRouteImport } from './routes/urunler'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GizlilikRoute = GizlilikRouteImport.update({
+  id: '/gizlilik',
+  path: '/gizlilik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HakkimizdaRoute = HakkimizdaRouteImport.update({
+  id: '/hakkimizda',
+  path: '/hakkimizda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IletisimRoute = IletisimRouteImport.update({
+  id: '/iletisim',
+  path: '/iletisim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KvkkRoute = KvkkRouteImport.update({
+  id: '/kvkk',
+  path: '/kvkk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MesafeliSatisRoute = MesafeliSatisRouteImport.update({
+  id: '/mesafeli-satis',
+  path: '/mesafeli-satis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SssRoute = SssRouteImport.update({
+  id: '/sss',
+  path: '/sss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UrunlerRoute = UrunlerRouteImport.update({
+  id: '/urunler',
+  path: '/urunler',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gizlilik': typeof GizlilikRoute
+  '/hakkimizda': typeof HakkimizdaRoute
+  '/iletisim': typeof IletisimRoute
+  '/kvkk': typeof KvkkRoute
+  '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sss': typeof SssRoute
+  '/urunler': typeof UrunlerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gizlilik': typeof GizlilikRoute
+  '/hakkimizda': typeof HakkimizdaRoute
+  '/iletisim': typeof IletisimRoute
+  '/kvkk': typeof KvkkRoute
+  '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sss': typeof SssRoute
+  '/urunler': typeof UrunlerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gizlilik': typeof GizlilikRoute
+  '/hakkimizda': typeof HakkimizdaRoute
+  '/iletisim': typeof IletisimRoute
+  '/kvkk': typeof KvkkRoute
+  '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sss': typeof SssRoute
+  '/urunler': typeof UrunlerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/gizlilik'
+    | '/hakkimizda'
+    | '/iletisim'
+    | '/kvkk'
+    | '/mesafeli-satis'
+    | '/sss'
+    | '/urunler'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/gizlilik'
+    | '/hakkimizda'
+    | '/iletisim'
+    | '/kvkk'
+    | '/mesafeli-satis'
+    | '/sss'
+    | '/urunler'
+  id:
+    | '__root__'
+    | '/'
+    | '/gizlilik'
+    | '/hakkimizda'
+    | '/iletisim'
+    | '/kvkk'
+    | '/mesafeli-satis'
+    | '/sss'
+    | '/urunler'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GizlilikRoute: typeof GizlilikRoute
+  HakkimizdaRoute: typeof HakkimizdaRoute
+  IletisimRoute: typeof IletisimRoute
+  KvkkRoute: typeof KvkkRoute
+  MesafeliSatisRoute: typeof MesafeliSatisRoute
+  SssRoute: typeof SssRoute
+  UrunlerRoute: typeof UrunlerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gizlilik': {
+      id: '/gizlilik'
+      path: '/gizlilik'
+      fullPath: '/gizlilik'
+      preLoaderRoute: typeof GizlilikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hakkimizda': {
+      id: '/hakkimizda'
+      path: '/hakkimizda'
+      fullPath: '/hakkimizda'
+      preLoaderRoute: typeof HakkimizdaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iletisim': {
+      id: '/iletisim'
+      path: '/iletisim'
+      fullPath: '/iletisim'
+      preLoaderRoute: typeof IletisimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kvkk': {
+      id: '/kvkk'
+      path: '/kvkk'
+      fullPath: '/kvkk'
+      preLoaderRoute: typeof KvkkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mesafeli-satis': {
+      id: '/mesafeli-satis'
+      path: '/mesafeli-satis'
+      fullPath: '/mesafeli-satis'
+      preLoaderRoute: typeof MesafeliSatisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sss': {
+      id: '/sss'
+      path: '/sss'
+      fullPath: '/sss'
+      preLoaderRoute: typeof SssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/urunler': {
+      id: '/urunler'
+      path: '/urunler'
+      fullPath: '/urunler'
+      preLoaderRoute: typeof UrunlerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GizlilikRoute: GizlilikRoute,
+  HakkimizdaRoute: HakkimizdaRoute,
+  IletisimRoute: IletisimRoute,
+  KvkkRoute: KvkkRoute,
+  MesafeliSatisRoute: MesafeliSatisRoute,
+  SssRoute: SssRoute,
+  UrunlerRoute: UrunlerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
