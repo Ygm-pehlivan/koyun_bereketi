@@ -46,7 +46,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto -mt-12 grid max-w-6xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="relative z-10 mx-auto -mt-12 grid max-w-6xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
         {FEATURES.map((f) => (
           <div key={f.title} className="rounded-2xl border border-border bg-card p-5 shadow-soft">
             <f.icon className="size-7 text-accent" />
