@@ -15,6 +15,7 @@ import { Route as HakkimizdaRouteImport } from './routes/hakkimizda'
 import { Route as IletisimRouteImport } from './routes/iletisim'
 import { Route as KvkkRouteImport } from './routes/kvkk'
 import { Route as MesafeliSatisRouteImport } from './routes/mesafeli-satis'
+import { Route as SepetRouteImport } from './routes/sepet'
 import { Route as SssRouteImport } from './routes/sss'
 import { Route as UrunlerRouteImport } from './routes/urunler'
 
@@ -48,6 +49,11 @@ const MesafeliSatisRoute = MesafeliSatisRouteImport.update({
   path: '/mesafeli-satis',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SepetRoute = SepetRouteImport.update({
+  id: '/sepet',
+  path: '/sepet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SssRoute = SssRouteImport.update({
   id: '/sss',
   path: '/sss',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/iletisim': typeof IletisimRoute
   '/kvkk': typeof KvkkRoute
   '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sepet': typeof SepetRoute
   '/sss': typeof SssRoute
   '/urunler': typeof UrunlerRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/iletisim': typeof IletisimRoute
   '/kvkk': typeof KvkkRoute
   '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sepet': typeof SepetRoute
   '/sss': typeof SssRoute
   '/urunler': typeof UrunlerRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/iletisim': typeof IletisimRoute
   '/kvkk': typeof KvkkRoute
   '/mesafeli-satis': typeof MesafeliSatisRoute
+  '/sepet': typeof SepetRoute
   '/sss': typeof SssRoute
   '/urunler': typeof UrunlerRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/iletisim'
     | '/kvkk'
     | '/mesafeli-satis'
+    | '/sepet'
     | '/sss'
     | '/urunler'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/iletisim'
     | '/kvkk'
     | '/mesafeli-satis'
+    | '/sepet'
     | '/sss'
     | '/urunler'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/iletisim'
     | '/kvkk'
     | '/mesafeli-satis'
+    | '/sepet'
     | '/sss'
     | '/urunler'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   IletisimRoute: typeof IletisimRoute
   KvkkRoute: typeof KvkkRoute
   MesafeliSatisRoute: typeof MesafeliSatisRoute
+  SepetRoute: typeof SepetRoute
   SssRoute: typeof SssRoute
   UrunlerRoute: typeof UrunlerRoute
 }
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MesafeliSatisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sepet': {
+      id: '/sepet'
+      path: '/sepet'
+      fullPath: '/sepet'
+      preLoaderRoute: typeof SepetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sss': {
       id: '/sss'
       path: '/sss'
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   IletisimRoute: IletisimRoute,
   KvkkRoute: KvkkRoute,
   MesafeliSatisRoute: MesafeliSatisRoute,
+  SepetRoute: SepetRoute,
   SssRoute: SssRoute,
   UrunlerRoute: UrunlerRoute,
 }

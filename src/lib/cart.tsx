@@ -31,7 +31,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, loaded]);
 
   const value = useMemo<Ctx>(() => {
-    const lines = PRODUCTS.filter((p) => items[p.id] > 0).map((p) => ({ product: p, qty: items[p.id] }));
+    const lines = PRODUCTS.filter((p) => (items[p.id] ?? 0) > 0).map((p) => ({ product: p, qty: items[p.id] ?? 0 }));
     return {
       lines,
       count: lines.reduce((s, l) => s + l.qty, 0),
