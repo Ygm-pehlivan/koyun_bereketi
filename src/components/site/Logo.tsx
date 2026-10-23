@@ -1,10 +1,10 @@
-import logoAsset from "@/assets/logo-k.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`flex items-center gap-3 ${className}`}>
       <img
-        src={logoAsset.url}
+        src={logoUrl}
         alt="Köyün Bereketi logosu"
         width={48}
         height={48}
